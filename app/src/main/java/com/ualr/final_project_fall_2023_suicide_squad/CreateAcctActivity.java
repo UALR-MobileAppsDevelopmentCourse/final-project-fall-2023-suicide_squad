@@ -34,6 +34,8 @@ public class CreateAcctActivity extends AppCompatActivity {
                 if (isValidRegistration(username, password, email)) {
                     // Perform registration logic, e.g., save to database
                     Toast.makeText(CreateAcctActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                    navigateToLoginPage();
+
                 } else {
                     Toast.makeText(CreateAcctActivity.this, "Invalid registration information", Toast.LENGTH_SHORT).show();
                 }
@@ -45,6 +47,12 @@ public class CreateAcctActivity extends AppCompatActivity {
         // Add your own logic for validating registration information
         // For now, it's just a placeholder
         return !username.isEmpty() && !password.isEmpty() && !email.isEmpty();
+    }
+
+    private void navigateToLoginPage() {
+        Intent intent = new Intent(CreateAcctActivity.this, UserLoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 
