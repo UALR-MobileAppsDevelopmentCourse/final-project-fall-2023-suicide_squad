@@ -20,6 +20,9 @@
         </activity>
         <activity
             android:name=".CreateAcctActivity" />
+        <activity
+            android:name=".DashboardOptionsActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

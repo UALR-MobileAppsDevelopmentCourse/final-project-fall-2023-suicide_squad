@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Intent;
+import androidx.appcompat.widget.Toolbar;
 
 public class UserLoginActivity extends AppCompatActivity {
 
@@ -18,6 +19,10 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login_activity);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("H4K");
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -42,6 +47,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
                 if (isValidLogin(username, password)) {
                     Toast.makeText(UserLoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    navigateToDashboardOptions();
 
                 } else {
                     Toast.makeText(UserLoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
@@ -50,8 +56,14 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         });
     }
-    private boolean isValidLogin(String username, String password) {
-        return username.equals("your_username") && password.equals("your_password");
+        private boolean isValidLogin(String username, String password) {
+            return username.equals("your_username") && password.equals("your_password");
 
-    }
+        }
+        private void navigateToDashboardOptions() {
+            Intent intent = new Intent(UserLoginActivity.this, DashboardOptionsActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
 }

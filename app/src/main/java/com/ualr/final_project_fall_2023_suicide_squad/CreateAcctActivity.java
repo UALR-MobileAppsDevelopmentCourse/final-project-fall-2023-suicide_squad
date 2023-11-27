@@ -8,6 +8,7 @@ import android.widget.Toast;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class CreateAcctActivity extends AppCompatActivity {
 
@@ -18,6 +19,10 @@ public class CreateAcctActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_acct_activity);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Create Account");
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -44,8 +49,7 @@ public class CreateAcctActivity extends AppCompatActivity {
     }
 
     private boolean isValidRegistration(String username, String password, String email) {
-        // Add your own logic for validating registration information
-        // For now, it's just a placeholder
+
         return !username.isEmpty() && !password.isEmpty() && !email.isEmpty();
     }
 
