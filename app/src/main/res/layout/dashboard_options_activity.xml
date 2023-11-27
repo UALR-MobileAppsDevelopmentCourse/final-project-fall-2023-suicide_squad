@@ -14,6 +14,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
+        app:title="Your Toolbar Title"
+        app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <RelativeLayout
