@@ -9,8 +9,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Intent;
 import androidx.appcompat.widget.Toolbar;
+import android.content.SharedPreferences;
 
 public class UserLoginActivity extends AppCompatActivity {
+
+    private SharedPreferences sharedPreferences;
 
     private EditText editTextUsername, editTextPassword;
     private Button buttonLogin;
@@ -19,6 +22,8 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login_activity);
+
+        sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,10 +47,13 @@ public class UserLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String username = editTextUsername.getText().toString();
-                String password = editTextPassword.getText().toString();
+                String storedUsername = sharedPreferences.getString("username", "");
+                String storedPassword = sharedPreferences.getString("password", "");
 
-                if (isValidLogin(username, password)) {
+                String enteredUsername = editTextUsername.getText().toString();
+                String enteredPassword = editTextPassword.getText().toString();
+
+                if (isValidLogin(enteredUsername, enteredPassword, storedUsername, storedPassword)) {
                     Toast.makeText(UserLoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                     navigateToDashboardOptions();
 
@@ -56,8 +64,8 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         });
     }
-        private boolean isValidLogin(String username, String password) {
-            return username.equals("your_username") && password.equals("your_password");
+        private boolean isValidLogin(String enteredUsername, String enteredPassword, String storedUsername, String storedPassword) {
+            return enteredUsername.equals(storedUsername) && enteredPassword.equals(storedPassword);
 
         }
         private void navigateToDashboardOptions() {
