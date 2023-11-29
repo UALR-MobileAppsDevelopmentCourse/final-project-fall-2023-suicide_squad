@@ -7,37 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".UserLoginActivity">
 
-    <CheckBox
-        android:id="@+id/checkBoxOption1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Store Username"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <CheckBox
-        android:id="@+id/checkBoxOption2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Store Password"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxOption1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
-
-    <CheckBox
-        android:id="@+id/checkBoxOption3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Store  Email    "
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxOption2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="45dp"/>
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
