@@ -41,14 +41,10 @@ public class UserLoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (isLoggedIn()) {
-                    saveContactData();
-                    Toast.makeText(UserLoginActivity.this, "Contact data saved", Toast.LENGTH_SHORT).show();
-                    navigateToDashboardOptions();
-                } else {
+
                     Intent intent = new Intent(UserLoginActivity.this, CreateAcctActivity.class);
                     startActivity(intent);
-                }
+
             }
         });
 
@@ -79,12 +75,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
         }
 
-       private boolean isLoggedIn() {
 
-        String enteredUsername = editTextUsername.getText().toString();
-        String enteredPassword = editTextPassword.getText().toString();
-        return !enteredUsername.isEmpty() && !enteredPassword.isEmpty();
-        }
         private void navigateToDashboardOptions() {
             Intent intent = new Intent(UserLoginActivity.this, DashboardOptionsActivity.class);
             startActivity(intent);
@@ -92,14 +83,4 @@ public class UserLoginActivity extends AppCompatActivity {
 
         }
 
-        private void saveContactData() {
-        String contactName = editTextUsername.getText().toString();
-        String contactPassword = editTextPassword.getText().toString();
-
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("contact_name", contactName);
-        editor.putString("contact_password", contactPassword);
-
-        editor.apply();
-        }
-}
+       }

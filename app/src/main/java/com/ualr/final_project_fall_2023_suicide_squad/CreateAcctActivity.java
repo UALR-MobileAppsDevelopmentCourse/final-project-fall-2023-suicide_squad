@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,11 +16,14 @@ public class CreateAcctActivity extends AppCompatActivity {
 
     private EditText editTextUsername, editTextPassword, editTextEmail;
     private Button buttonCreateAccount;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_acct_activity);
+
+        sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,6 +46,11 @@ public class CreateAcctActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString();
 
                 if (isValidRegistration(username, password, email)) {
+                  SharedPreferences.Editor editor = sharedPreferences.edit();
+                  editor.putString("username", username);
+                  editor.putString("password", password);
+                  editor.apply();
+
                     // Perform registration logic, e.g., save to database
                     Toast.makeText(CreateAcctActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                     navigateToLoginPage();
