@@ -25,10 +25,12 @@
         android:id="@+id/editTextUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="200dp"
         android:hint="Username"
         android:minHeight="48dp"
         android:padding="8dp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -38,11 +40,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="8dp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -51,11 +55,14 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
         android:text=" Login "
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount"
+        app:layout_constraintVertical_bias="0.5" />
     
     <Button
         android:id="@+id/btnCreateAccount"
@@ -63,6 +70,7 @@
         android:layout_height="wrap_content"
         android:text="Create Account"
         android:layout_marginTop="16dp"
+        android:textStyle="italic"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

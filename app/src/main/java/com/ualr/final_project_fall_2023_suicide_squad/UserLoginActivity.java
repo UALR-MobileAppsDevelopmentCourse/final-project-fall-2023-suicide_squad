@@ -34,6 +34,7 @@ public class UserLoginActivity extends AppCompatActivity {
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
 
+
         buttonLogin = findViewById(R.id.buttonLogin);
         Button createAccountButton = findViewById(R.id.btnCreateAccount);
 
