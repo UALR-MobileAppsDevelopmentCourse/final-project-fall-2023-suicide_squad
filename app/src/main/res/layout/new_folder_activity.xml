@@ -5,16 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserLoginActivity">
+    tools:context=".UserLoginActivity"
+    android:background="@color/DarkBackground">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/DarkBackground"
         android:elevation="4dp"
         app:title="Your Toolbar Title"
         app:titleTextAppearance="@style/ItalicToolbarText"
+        app:titleTextColor="@color/white"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <RelativeLayout

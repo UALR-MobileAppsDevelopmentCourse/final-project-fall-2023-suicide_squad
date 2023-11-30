@@ -2,7 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    */ here are the color schemes we can use, ill ad the primary usage as a comment, feel free to change */
+    <color name="colorAzureBlue">#007FFF</color>
+    <color name="colorVividMagenta">#FF00FF</color>
+    <color name="colorElectricGreen">#7DF9FF</color>
+    <color name="colorNeonYellow">#FFFF33</color>
+    <color name="colorNeonOrange">#FF5733</color>
+    <color name="colorNeonBlue">#1F51FF</color>
+    <color name="colorMediumGray">#808080</color>
+    <color name="DarkBackground">#1D2230</color>
+    <color name="colorLighterElectricGreen">#9EFBFF</color>
 </resources>
