@@ -22,11 +22,7 @@
         app:title="Your Toolbar Title"
         app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
 
     <RelativeLayout
         android:layout_width="match_parent"
