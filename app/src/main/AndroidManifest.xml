@@ -23,6 +23,13 @@
         <activity
             android:name=".DashboardOptionsActivity"
             android:exported="true"/>
+        <activity
+            android:name=".NewFolderActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".NewNoteActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"/>
     </application>
 
 </manifest>

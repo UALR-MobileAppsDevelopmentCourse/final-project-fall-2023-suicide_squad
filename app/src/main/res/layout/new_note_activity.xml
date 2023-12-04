@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/DarkBackground">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,14 +11,30 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        app:title="Your Toolbar Title"
+        app:title="Notes"
         app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/editTextNote"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        android:layout_centerInParent="true">
-    </RelativeLayout>
+        android:contentDescription="Enter Your Notes Here"
+        android:background="@drawable/lined_paper"
+        android:lineSpacingExtra="10dp"
+        android:textColor="#000000"
+        android:padding="24dp"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/buttonSaveNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Note"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"/>
+
 </RelativeLayout>

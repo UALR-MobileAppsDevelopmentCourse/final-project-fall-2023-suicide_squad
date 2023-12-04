@@ -70,6 +70,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
             }
         });
+
     }
         private boolean isValidLogin(String enteredUsername, String enteredPassword, String storedUsername, String storedPassword) {
             return enteredUsername.equals(storedUsername) && enteredPassword.equals(storedPassword);

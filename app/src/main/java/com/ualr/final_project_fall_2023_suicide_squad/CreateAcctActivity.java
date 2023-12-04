@@ -60,6 +60,7 @@ public class CreateAcctActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private boolean isValidRegistration(String username, String password, String email) {

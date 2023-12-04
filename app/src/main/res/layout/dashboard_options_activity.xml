@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     android:background="@color/DarkBackground">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFolders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"/>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,6 +22,11 @@
         app:title="Your Toolbar Title"
         app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,4 +35,16 @@
         android:layout_centerInParent="true">
     </RelativeLayout>
 
+
+
+    <Button
+        android:id="@+id/btn_new_folder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="Create New Folder"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/ic_action_name_white"/>
+
 </RelativeLayout>
+

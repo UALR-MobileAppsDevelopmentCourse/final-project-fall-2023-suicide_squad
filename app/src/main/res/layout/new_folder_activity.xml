@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/DarkBackground"
         android:elevation="4dp"
-        app:title="Your Toolbar Title"
+        app:title="Create Folder"
         app:titleTextAppearance="@style/ItalicToolbarText"
         app:titleTextColor="@color/white"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
@@ -24,6 +24,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
         android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/editTextFolderName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textColor="#FFFFFFFF"
+            android:hint="Name"
+            android:inputType="text" />
+
+        <!-- Create Folder Button -->
+        <Button
+            android:id="@+id/buttonCreateFolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Folder"
+            android:layout_below="@id/editTextFolderName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_action_name_white"/>
+
     </RelativeLayout>
+
 
 </RelativeLayout>
