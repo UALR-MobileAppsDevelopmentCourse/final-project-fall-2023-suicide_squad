@@ -2,8 +2,16 @@
     <string name="app_name">H4K</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="email">Email</string>
     <string name="login">Login</string>
-    <string name="add_new_folder">Add</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_new_folder">Create New Folder</string>
     <string name="switch_button">Switch</string>
+    <string name="save_new_note">Save Note</string>
+    <string name="name_hint">Name</string>
+    <string name="name_folder">Folder Name</string>
+    <string name="enter_note">Enter Your Notes Here</string>
+    <string name="add_folder">Add New Folder</string>
+
 
 </resources>

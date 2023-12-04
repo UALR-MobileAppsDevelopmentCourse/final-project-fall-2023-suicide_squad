@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="200dp"
-            android:hint="Username"
+            android:hint="@string/username"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:minHeight="48dp" />
@@ -42,7 +42,7 @@
             android:layout_below="@id/editTextUsername"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
@@ -55,7 +55,7 @@
             android:layout_below="@id/editTextPassword"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:hint="Email"
+            android:hint="@string/email"
             android:textColorHint="@color/white"
             android:inputType="textEmailAddress"
             android:textColor="@color/white"
@@ -69,7 +69,7 @@
             android:layout_below="@id/editTextEmail"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:textColor="@color/black"/>
     </RelativeLayout>
 

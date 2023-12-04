@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:textColor="#FFFFFFFF"
-            android:hint="Name"
+            android:hint="@string/name_hint"
             android:inputType="text" />
 
         <!-- Create Folder Button -->
@@ -38,7 +38,7 @@
             android:id="@+id/buttonCreateFolder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Folder"
+            android:text="@string/add_folder"
             android:layout_below="@id/editTextFolderName"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"

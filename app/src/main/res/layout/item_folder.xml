@@ -3,7 +3,7 @@
     android:id="@+id/buttonFolder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Folder Name"
+    android:text="@string/name_folder"
     android:padding="16dp"
     android:textAlignment="center"
     android:textSize="18sp"

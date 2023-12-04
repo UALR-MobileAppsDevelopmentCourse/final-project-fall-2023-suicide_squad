@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
-        android:text="Create New Folder"
+        android:text="@string/create_new_folder"
         android:layout_centerInParent="true"
         android:drawableLeft="@drawable/ic_action_name_white"/>
 
