@@ -69,4 +69,11 @@ public class DashboardOptionsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         // may need to update the adapter here
     }
+
+    private void navigateToNewFolderActivity() {
+        Intent intent = new Intent(DashboardOptionsActivity.this, NewFolderActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
 }
