@@ -1,48 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/DarkBackground">
 
-    <!-- Switch View Button to chose between list or grid -->
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/btnSwitchView"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:title="Your Toolbar Title"
+        app:titleTextAppearance="@style/ItalicToolbarText"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:layout_alignParentStart="true"
-        app:trackTint="@color/colorLighterElectricGreen"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
-        android:padding="8dp"/>
+        android:layout_centerInParent="true">
+    </RelativeLayout>
 
-    <!-- RecyclerView with New Folder Button as an fab -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:padding="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_item_folder"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    <!-- New Folder Button -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddFolder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/colorLighterElectricGreen"
-        app:fabCustomSize="50dp"
-        app:fabSize="auto"
-        app:srcCompat="@drawable/baseline_add_24"
-        android:contentDescription="@string/add_new_folder"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
