@@ -3,4 +3,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="add_new_folder">Add</string>
+    <string name="switch_button">Switch</string>
+
 </resources>
