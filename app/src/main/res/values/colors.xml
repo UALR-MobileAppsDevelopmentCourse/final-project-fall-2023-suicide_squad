@@ -6,12 +6,12 @@
     <color name="colorAccent">#FF4081</color>
 
     */ here are the color schemes we can use, ill ad the primary usage as a comment, feel free to change */
-    <color name="colorAzureBlue">#007FFF</color>
-    <color name="colorVividMagenta">#FF00FF</color>
-    <color name="colorElectricGreen">#7DF9FF</color>
-    <color name="colorNeonYellow">#FFFF33</color>
-    <color name="colorNeonOrange">#FF5733</color>
-    <color name="colorNeonBlue">#1F51FF</color>
+    <color name="colorDarkNavy">#0D1F2D</color>
+    <color name="colorMidnightBlue">#172A3A</color>
+    <color name="colorMetallicSeagreen">#296E73</color>
+    <color name="colorShadowGray">#637C83</color>
+    <color name="colorSteelBlue">#467A8D</color>
+    <color name="colorCharcoal">#303B44</color>
     <color name="colorMediumGray">#808080</color>
     <color name="DarkBackground">#1D2230</color>
     <color name="colorLighterElectricGreen">#9EFBFF</color>

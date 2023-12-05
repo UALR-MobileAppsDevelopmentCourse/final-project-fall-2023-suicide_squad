@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserLoginActivity"
-    android:background="@color/DarkBackground">
+    android:background="@color/colorDarkNavy">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
+        android:background="@color/colorSteelBlue"
         app:title="Your Toolbar Title"
         app:titleTextAppearance="@style/ItalicToolbarText"
         app:titleTextColor="@color/white"

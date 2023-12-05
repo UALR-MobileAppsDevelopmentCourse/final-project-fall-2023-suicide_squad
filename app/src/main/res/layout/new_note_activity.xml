@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/DarkBackground"
+        android:background="@color/colorSteelBlue"
         android:elevation="4dp"
         app:title="Notes"
         app:titleTextColor="@color/white"
