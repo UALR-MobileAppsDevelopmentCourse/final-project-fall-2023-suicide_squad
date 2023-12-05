@@ -92,7 +92,7 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
 
     @Override
     public void onFolderClick(String folderName) {
-        Intent intent = new Intent(this, NewNoteActivity.class);
+        Intent intent = new Intent(this, CreatedFolderActivity.class);
         intent.putExtra("FOLDER_NAME", folderName);
         startActivity(intent);
     }
