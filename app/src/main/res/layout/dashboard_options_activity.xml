@@ -17,9 +17,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/DarkBackground"
         android:elevation="4dp"
         app:title="Your Toolbar Title"
+        app:titleTextColor="@color/white"
         app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
@@ -32,15 +33,16 @@
     </RelativeLayout>
 
 
-
     <Button
         android:id="@+id/btn_new_folder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:text="@string/create_new_folder"
         android:layout_centerInParent="true"
-        android:drawableLeft="@drawable/ic_action_name_white"/>
+        android:drawableLeft="@drawable/ic_action_name_white"
+        android:text="@string/create_new_folder"
+        android:textStyle="italic"
+        android:textColor="@color/DarkBackground"
+        android:backgroundTint="@color/colorLighterElectricGreen"/>
 
 </RelativeLayout>
 

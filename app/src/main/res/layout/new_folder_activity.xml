@@ -40,9 +40,11 @@
             android:layout_height="wrap_content"
             android:text="@string/add_folder"
             android:layout_below="@id/editTextFolderName"
+            android:textColor="@color/DarkBackground"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:drawableLeft="@drawable/ic_action_name_white"/>
+            android:drawableLeft="@drawable/ic_action_name_white"
+            android:backgroundTint= "@color/colorLighterElectricGreen"/>
 
     </RelativeLayout>
 

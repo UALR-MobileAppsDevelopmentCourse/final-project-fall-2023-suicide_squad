@@ -7,4 +7,6 @@
     android:padding="16dp"
     android:textAlignment="center"
     android:textSize="18sp"
-    android:layout_margin="8dp"/>
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/colorLighterElectricGreen"
+    android:textColor="@color/DarkBackground"/>
