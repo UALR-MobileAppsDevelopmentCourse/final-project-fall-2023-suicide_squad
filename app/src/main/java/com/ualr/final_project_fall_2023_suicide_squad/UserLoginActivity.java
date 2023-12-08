@@ -73,8 +73,15 @@ public class UserLoginActivity extends AppCompatActivity {
 
     }
         private boolean isValidLogin(String enteredUsername, String enteredPassword, String storedUsername, String storedPassword) {
-            return enteredUsername.equals(storedUsername) && enteredPassword.equals(storedPassword);
 
+            // Check if the entered username exists in the stored data
+            if (enteredUsername.equals(storedUsername)) {
+                // Check if the stored password is non-empty and matches the entered password
+                return !storedPassword.isEmpty() && enteredPassword.equals(storedPassword);
+            } else {
+                // If no, return false
+                return false;
+            }
         }
 
 
