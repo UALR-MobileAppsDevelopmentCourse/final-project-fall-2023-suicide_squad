@@ -7,11 +7,25 @@
     android:layout_height="match_parent"
     android:background="@color/DarkBackground">
 
+
+    <EditText
+        android:id="@+id/searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:height="48dp"
+        android:layout_below="@id/toolbar"
+        android:hint="@string/search_note"
+        android:drawableStart="@drawable/baseline_search"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFolders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/searchbar"/>
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -19,19 +33,17 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorSteelBlue"
         android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:title="Your Toolbar Title"
-        app:titleTextColor="@color/white"
         app:titleTextAppearance="@style/ItalicToolbarText"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
-
+        app:titleTextColor="@color/white" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/searchbar"
         android:layout_centerInParent="true">
     </RelativeLayout>
-
 
     <Button
         android:id="@+id/btn_new_folder"

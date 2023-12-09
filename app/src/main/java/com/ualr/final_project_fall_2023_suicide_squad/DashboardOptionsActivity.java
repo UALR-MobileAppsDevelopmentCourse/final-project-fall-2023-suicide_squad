@@ -4,9 +4,13 @@ package com.ualr.final_project_fall_2023_suicide_squad;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.search.SearchBar;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,6 +42,25 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_options_activity);
+
+        EditText searchBar = findViewById(R.id.searchbar);
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+
 
         recyclerViewFolders = findViewById(R.id.recyclerViewFolders);
         int numberOfColumns = 2; // Adjust the number of columns as needed
@@ -89,6 +115,24 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    private void filter(String text){
+        List<String> filteredList = new ArrayList<>();
+        for (String folderName : folderList){
+            if (folderName.toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(folderName);
+            }
+        }
+
+        folderAdapter.filterList(filteredList);
+
+        if (filteredList.isEmpty()){
+            showToast("No Folder Found");
+        }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onFolderClick(String folderName) {

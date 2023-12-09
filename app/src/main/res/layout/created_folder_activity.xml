@@ -7,11 +7,22 @@
     android:layout_height="match_parent"
     android:background="@color/DarkBackground">
 
+    <EditText
+        android:id="@+id/searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:height="48dp"
+        android:layout_below="@id/toolbar"
+        android:hint="@string/search_note"
+        android:drawableStart="@drawable/baseline_search"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFolders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/searchbar"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
