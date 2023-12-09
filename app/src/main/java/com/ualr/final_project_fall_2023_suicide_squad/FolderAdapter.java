@@ -17,26 +17,12 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.ViewHolder
     private final List<String> folderList;
     private final OnFolderClickListener onFolderClickListener;
 
-    private List<String> originalFolderList;
-    private List<String> filteredFolderList;
-
 
     public FolderAdapter(List<String> folderList, OnFolderClickListener onFolderClickListener) {
         this.folderList = folderList;
         this.onFolderClickListener = onFolderClickListener;
-        this.originalFolderList = folderList;
-        this.filteredFolderList = new ArrayList<>(folderList);
-        //TODO maybe add a this.listener = listener;
     }
 
-    public void filterList(List<String> filteredList){
-        filteredFolderList = new ArrayList<>(filteredList);
-        notifyDataSetChanged();
-    }
-
-    public int getFilteredItemCount(){
-        return filteredFolderList.size();
-    }
 
     @NonNull
     @Override

@@ -43,24 +43,6 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_options_activity);
 
-        EditText searchBar = findViewById(R.id.searchbar);
-        searchBar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                filter(s.toString());
-            }
-        });
-
 
         recyclerViewFolders = findViewById(R.id.recyclerViewFolders);
         int numberOfColumns = 2; // Adjust the number of columns as needed
@@ -113,25 +95,6 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         getSupportActionBar().setTitle("Dashboard Options");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-    }
-
-    private void filter(String text){
-        List<String> filteredList = new ArrayList<>();
-        for (String folderName : folderList){
-            if (folderName.toLowerCase().contains(text.toLowerCase())){
-                filteredList.add(folderName);
-            }
-        }
-
-        folderAdapter.filterList(filteredList);
-
-        if (filteredList.isEmpty()){
-            showToast("No Folder Found");
-        }
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
