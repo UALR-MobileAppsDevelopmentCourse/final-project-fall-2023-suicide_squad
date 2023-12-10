@@ -14,7 +14,6 @@
         android:layout_below="@id/toolbar"
         android:iconifiedByDefault="false"
         android:queryHint="Search folders"
-        android:background="@color/colorMetallicSeagreen"
         />
 
     <androidx.recyclerview.widget.RecyclerView
