@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -43,6 +44,19 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_options_activity);
 
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                folderAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
         recyclerViewFolders = findViewById(R.id.recyclerViewFolders);
         int numberOfColumns = 2; // Adjust the number of columns as needed

@@ -9,18 +9,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 
-
-public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.ViewHolder> {
+public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.ViewHolder> implements Filterable {
 
     private final List<String> folderList;
+    private List<String> ListFull;
     private final OnFolderClickListener onFolderClickListener;
 
 
     public FolderAdapter(List<String> folderList, OnFolderClickListener onFolderClickListener) {
         this.folderList = folderList;
         this.onFolderClickListener = onFolderClickListener;
+        ListFull = new ArrayList<>(folderList);
     }
 
 
@@ -57,4 +60,38 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.ViewHolder
     public interface OnFolderClickListener {
         void onFolderClick(String folderName);
     }
+
+    @Override
+    public Filter getFilter() {
+        return listFilter;
+    }
+    private Filter listFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<String> filteredList = new ArrayList<>();
+
+            if (constraint == null||constraint.length()==0){
+                filteredList.addAll(ListFull);
+
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (String item :ListFull){
+                    if (item.toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            folderList.clear();
+            folderList.addAll((List)results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
