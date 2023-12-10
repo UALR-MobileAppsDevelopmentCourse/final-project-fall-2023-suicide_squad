@@ -12,6 +12,8 @@
     <string name="name_folder">Folder Name</string>
     <string name="enter_note">Enter Your Notes Here</string>
     <string name="add_folder">Add New Folder</string>
+    <string name="search_Folder">Search Folder</string>
+    <string name="search_note">Search Note</string>
 
 
 </resources>

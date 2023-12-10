@@ -7,11 +7,20 @@
     android:layout_height="match_parent"
     android:background="@color/DarkBackground">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search folders"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFolders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/searchView"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

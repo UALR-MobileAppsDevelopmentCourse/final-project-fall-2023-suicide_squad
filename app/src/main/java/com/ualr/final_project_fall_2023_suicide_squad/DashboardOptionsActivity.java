@@ -3,17 +3,28 @@ package com.ualr.final_project_fall_2023_suicide_squad;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.search.SearchBar;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,6 +46,28 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_options_activity);
+
+        SearchView searchView = findViewById(R.id.searchView);
+
+        EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+        searchEditText.setTextColor(getResources().getColor(R.color.colorLighterElectricGreen));
+        ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_button);
+        Drawable drawable = searchIcon.getDrawable();
+        drawable.setColorFilter(getResources().getColor(R.color.colorLighterElectricGreen), PorterDuff.Mode.SRC_IN);
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                folderAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
         recyclerViewFolders = findViewById(R.id.recyclerViewFolders);
         int numberOfColumns = 2; // Adjust the number of columns as needed
@@ -88,7 +121,6 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
-
 
     @Override
     public void onFolderClick(String folderName) {
