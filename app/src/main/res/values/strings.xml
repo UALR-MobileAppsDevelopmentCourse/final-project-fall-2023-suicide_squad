@@ -14,6 +14,12 @@
     <string name="add_folder">Add New Folder</string>
     <string name="search_Folder">Search Folder</string>
     <string name="search_note">Search Note</string>
+    <string name="list">List View</string>
+    <string name="grid">Grid View</string>
+    <string name="app_folders">H4K | Folders</string>
+
+
+
 
 
 </resources>

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
@@ -21,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.search.SearchBar;
@@ -41,6 +43,7 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
     private RecyclerView recyclerViewFolders;
     private FolderAdapter folderAdapter;
     private List<String> folderList;
+    private ToggleButton toggleViewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,15 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
         Drawable drawable = searchIcon.getDrawable();
         drawable.setColorFilter(getResources().getColor(R.color.colorLighterElectricGreen), PorterDuff.Mode.SRC_IN);
 
+        toggleViewButton=findViewById(R.id.toggleViewButton);
+        toggleViewButton.setOnCheckedChangeListener(((buttonView, isChecked) -> {
+            if (isChecked){
+                recyclerViewFolders.setLayoutManager(new GridLayoutManager(this, 2));
+            }
+            else {
+                recyclerViewFolders.setLayoutManager(new LinearLayoutManager(this));
+            }
+        }));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
