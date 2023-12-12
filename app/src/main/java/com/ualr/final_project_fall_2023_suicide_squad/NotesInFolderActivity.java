@@ -3,17 +3,25 @@ package com.ualr.final_project_fall_2023_suicide_squad;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,31 +32,71 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreatedFolderActivity extends AppCompatActivity implements FolderAdapter.OnFolderClickListener {
+public class NotesInFolderActivity extends AppCompatActivity implements FolderAdapter.OnFolderClickListener {
 
     private static final int NEW_FOLDER_REQUEST_CODE = 1;
     private RecyclerView recyclerViewFolders;
     private FolderAdapter folderAdapter;
     private List<String> folderList;
+    private ToggleButton toggleViewButton;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard_options_activity);
+        setContentView(R.layout.notes_in_folder_activity);
+
+        String folderName = getIntent().getStringExtra("FOLDER_NAME");
+        SearchView searchView = findViewById(R.id.searchView);
+
+        Button btnNewFolder = findViewById(R.id.btn_new_folder);
+        btnNewFolder.setOnClickListener(view -> {
+            Intent intent = new Intent(this, NewFolderActivity.class);
+            intent.putExtra("ACTIVITY_CONTEXT", "notes");
+            startActivityForResult(intent, NEW_FOLDER_REQUEST_CODE);
+        });
+
+
+
+        EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+        searchEditText.setTextColor(getResources().getColor(R.color.colorLighterElectricGreen));
+        ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_button);
+        Drawable drawable = searchIcon.getDrawable();
+        drawable.setColorFilter(getResources().getColor(R.color.colorLighterElectricGreen), PorterDuff.Mode.SRC_IN);
+
+        toggleViewButton=findViewById(R.id.toggleViewButton);
+        toggleViewButton.setOnCheckedChangeListener(((buttonView, isChecked) -> {
+            if (isChecked){
+                recyclerViewFolders.setLayoutManager(new GridLayoutManager(this, 2));
+            }
+            else {
+                recyclerViewFolders.setLayoutManager(new LinearLayoutManager(this));
+            }
+        }));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                folderAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
 
         recyclerViewFolders = findViewById(R.id.recyclerViewFolders);
         int numberOfColumns = 2; // Adjust the number of columns as needed
         recyclerViewFolders.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
 
         folderList = readSavedFolderNames(); // Initialize folderList with saved folder names
-        folderAdapter = new FolderAdapter(folderList, this);
+        folderAdapter = new FolderAdapter(folderList, (FolderAdapter.OnFolderClickListener) this);
         recyclerViewFolders.setAdapter(folderAdapter);
 
-        Button btnNewFolder = findViewById(R.id.btn_new_folder);
-        btnNewFolder.setOnClickListener(view -> {
-            Intent intent = new Intent(CreatedFolderActivity.this, NewNoteActivity.class);
-            startActivityForResult(intent, NEW_FOLDER_REQUEST_CODE);
-        });
 
         // Initialize swipe-to-delete functionality
         ItemTouchHelper.SimpleCallback itemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -82,18 +130,13 @@ public class CreatedFolderActivity extends AppCompatActivity implements FolderAd
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemTouchCallback);
         itemTouchHelper.attachToRecyclerView(recyclerViewFolders);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Notes Dashboard Options");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
 
     @Override
     public void onFolderClick(String folderName) {
         Intent intent = new Intent(this, NewNoteActivity.class);
-        intent.putExtra("FOLDER_NAME", folderName);
+        intent.putExtra("FOLDER_NAME", folderName); // Pass the clicked folder name to the NewNoteActivity
         startActivity(intent);
     }
 
@@ -110,7 +153,7 @@ public class CreatedFolderActivity extends AppCompatActivity implements FolderAd
 
     private List<String> readSavedFolderNames() {
         List<String> folderNames = new ArrayList<>();
-        try (FileInputStream fis = openFileInput("folders.txt");
+        try (FileInputStream fis = openFileInput("notes_folders.txt");
              InputStreamReader isr = new InputStreamReader(fis);
              BufferedReader br = new BufferedReader(isr)) {
             String folderName;
@@ -122,6 +165,7 @@ public class CreatedFolderActivity extends AppCompatActivity implements FolderAd
         }
         return folderNames;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -145,10 +189,9 @@ public class CreatedFolderActivity extends AppCompatActivity implements FolderAd
     }
 
     private void saveFolderNames(List<String> folderNames) {
-        try (FileOutputStream fos = openFileOutput("folders.txt", Context.MODE_PRIVATE);
+        try (FileOutputStream fos = openFileOutput("notes_folders.txt", Context.MODE_PRIVATE);
              OutputStreamWriter osw = new OutputStreamWriter(fos);
              BufferedWriter bw = new BufferedWriter(osw)) {
-
             for (String folderName : folderNames) {
                 bw.write(folderName);
                 bw.newLine();
@@ -156,5 +199,6 @@ public class CreatedFolderActivity extends AppCompatActivity implements FolderAd
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }}
+    }
 
+}

@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MenuItem;
 
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
@@ -24,8 +21,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.search.SearchBar;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -91,8 +86,10 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
 
         Button btnNewFolder = findViewById(R.id.btn_new_folder);
         btnNewFolder.setOnClickListener(view -> {
-            Intent intent = new Intent(DashboardOptionsActivity.this, NewFolderActivity.class);
+            Intent intent = new Intent(this, NewFolderActivity.class);
+            intent.putExtra("ACTIVITY_CONTEXT", "dashboard");
             startActivityForResult(intent, NEW_FOLDER_REQUEST_CODE);
+
         });
 
         // Initialize swipe-to-delete functionality
@@ -136,10 +133,12 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
 
     @Override
     public void onFolderClick(String folderName) {
-        Intent intent = new Intent(this, CreatedFolderActivity.class);
+        Intent intent = new Intent(this, NotesInFolderActivity.class);
         intent.putExtra("FOLDER_NAME", folderName);
         startActivity(intent);
     }
+
+
 
 
     @Override
@@ -181,12 +180,14 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
             File[] files = folder.listFiles();
             if (files != null) {
                 for (File file : files) {
-                    deleteFolder(file);
+                    deleteFolder(file); // Recursively delete subfolders and files
                 }
             }
         }
-        folder.delete();
+        folder.delete(); // Delete the folder itself after its contents are deleted
     }
+
+
 
     private void saveFolderNames(List<String> folderNames) {
         try (FileOutputStream fos = openFileOutput("folders.txt", Context.MODE_PRIVATE);

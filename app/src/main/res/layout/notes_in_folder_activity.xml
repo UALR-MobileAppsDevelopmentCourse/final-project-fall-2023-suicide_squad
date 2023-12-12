@@ -27,37 +27,37 @@
 
 
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:id="@+id/search_toggle">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/colorSteelBlue"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:title="@string/app_folders"
-        android:fontFamily="cursive"
-        android:textStyle="italic"
-        app:titleTextColor="@color/white" />
+        android:orientation="horizontal"
+        android:id="@+id/search_toggle">
 
-      <ToggleButton
-          android:id="@+id/toggleViewButton"
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:layout_gravity="end"
-          android:textOn="@string/grid"
-          android:textOff="@string/list"
-          android:checked="true"
-          android:background="@drawable/rounded_toggle_background"
-          android:textColor="@color/DarkBackground"
-          android:theme="@style/ToggleButtonStyle"/>
-  </LinearLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorSteelBlue"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:title="@string/app_folders"
+            android:fontFamily="cursive"
+            android:textStyle="italic"
+            app:titleTextColor="@color/white" />
+
+        <ToggleButton
+            android:id="@+id/toggleViewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:textOn="@string/grid"
+            android:textOff="@string/list"
+            android:checked="true"
+            android:background="@drawable/rounded_toggle_background"
+            android:textColor="@color/DarkBackground"
+            android:theme="@style/ToggleButtonStyle"/>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

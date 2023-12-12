@@ -90,8 +90,12 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.ViewHolder
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             folderList.clear();
-            folderList.addAll((List)results.values);
+            if (results.values instanceof List) {
+                folderList.addAll((List<String>) results.values);
+            }
             notifyDataSetChanged();
         }
+
+
     };
 }

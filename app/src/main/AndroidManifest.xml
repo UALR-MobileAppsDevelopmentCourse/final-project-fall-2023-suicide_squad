@@ -30,6 +30,7 @@
             android:name=".NewNoteActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true"/>
+        <activity android:name=".NotesInFolderActivity"/>
     </application>
 
 </manifest>
