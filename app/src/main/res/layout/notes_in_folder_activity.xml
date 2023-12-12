@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBackground">
+    android:background="@color/colorSteelBlue">
 
 
     <androidx.appcompat.widget.SearchView
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_toggle"
-        android:background="@color/DarkBackground"
+        android:background="@color/colorMidnightBlue"
         android:iconifiedByDefault="false"
         android:queryHint="Search folders"
         app:commitIcon="@drawable/baseline_search_24"
@@ -23,7 +23,8 @@
         android:id="@+id/recyclerViewFolders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchView"/>
+        android:layout_below="@id/searchView"
+        android:background="@color/DarkBackground"/>
 
 
 
@@ -41,9 +42,7 @@
             android:background="@color/colorSteelBlue"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:title="@string/app_folders"
-            android:fontFamily="cursive"
-            android:textStyle="italic"
+            app:title="@string/app_notes"
             app:titleTextColor="@color/white" />
 
         <ToggleButton
@@ -77,7 +76,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/colorLighterElectricGreen"
-        android:text="@string/create_new_folder"
+        android:text="@string/create_new_note"
         android:textColor="@color/DarkBackground" />
 
 </RelativeLayout>

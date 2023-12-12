@@ -29,16 +29,19 @@
             android:id="@+id/editTextFolderName"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:textColor="#FFFFFFFF"
+            android:textColor="@color/colorMetallicSeagreen"
             android:hint="@string/name_hint"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColorHint="@color/colorMetallicSeagreen"
+            android:background="@color/colorMidnightBlue"
+            android:drawableLeft="@drawable/baseline_folder_24"/>
 
         <!-- Create Folder Button -->
         <Button
             android:id="@+id/buttonCreateFolder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_folder"
+            android:text="@string/add_new_folder_note"
             android:layout_below="@id/editTextFolderName"
             android:textColor="@color/DarkBackground"
             android:layout_centerHorizontal="true"

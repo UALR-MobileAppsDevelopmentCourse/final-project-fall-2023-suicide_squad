@@ -16,8 +16,9 @@
     <string name="search_note">Search Note</string>
     <string name="list">List View</string>
     <string name="grid">Grid View</string>
-    <string name="app_folders">H4K | Folders</string>
+    <string name="app_notes">H4K | Notes</string>
     <string name="create_new_note">New Note</string>
+    <string name="add_new_folder_note">Add New </string>
 
 
 
