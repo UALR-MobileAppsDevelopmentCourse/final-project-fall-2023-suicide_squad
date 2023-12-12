@@ -6,6 +6,7 @@
     <string name="login">Login</string>
     <string name="create_account">Create Account</string>
     <string name="create_new_folder">Create New Folder</string>
+    <string name="create_new">Create New </string>
     <string name="switch_button">Switch</string>
     <string name="save_new_note">Save Note</string>
     <string name="name_hint">Name</string>

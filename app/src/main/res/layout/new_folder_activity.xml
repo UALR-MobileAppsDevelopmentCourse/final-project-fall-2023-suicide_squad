@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorSteelBlue"
         android:elevation="4dp"
-        app:title="Create Folder"
+        app:title="@string/create_new"
         app:titleTextAppearance="@style/ItalicToolbarText"
         app:titleTextColor="@color/white"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
@@ -34,7 +34,7 @@
             android:inputType="text"
             android:textColorHint="@color/colorMetallicSeagreen"
             android:background="@color/colorMidnightBlue"
-            android:drawableLeft="@drawable/baseline_folder_24"/>
+            android:drawableLeft="@drawable/baseline_pencil"/>
 
         <!-- Create Folder Button -->
         <Button

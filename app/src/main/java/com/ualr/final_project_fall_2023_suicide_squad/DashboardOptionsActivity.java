@@ -126,7 +126,7 @@ public class DashboardOptionsActivity extends AppCompatActivity implements Folde
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Dashboard Options");
+        getSupportActionBar().setTitle("H4K | Dashboard");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
