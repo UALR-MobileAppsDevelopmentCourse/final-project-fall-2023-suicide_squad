@@ -26,7 +26,7 @@
         android:textColorHint="@color/colorMetallicSeagreen"
         android:background="@color/colorMidnightBlue"
         android:lineSpacingExtra="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/colorMetallicSeagreen"
         android:padding="24dp"
         android:gravity="top"
         android:inputType="textMultiLine" />
