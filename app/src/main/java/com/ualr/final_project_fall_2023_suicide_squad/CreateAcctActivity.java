@@ -27,7 +27,7 @@ public class CreateAcctActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Create Account");
+        getSupportActionBar().setTitle("H4K | Create Account");
 
         //Enable the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

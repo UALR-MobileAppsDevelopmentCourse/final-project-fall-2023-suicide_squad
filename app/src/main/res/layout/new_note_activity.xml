@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorSteelBlue"
         android:elevation="4dp"
-        app:title="Notes"
+        app:title="H4K | Add Notes"
         app:titleTextColor="@color/white"
         app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
@@ -23,10 +23,11 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:hint="@string/enter_note"
-        android:textColorHint="@color/colorMetallicSeagreen"
+        android:textSize="22sp"
+        android:textColorHint="@color/colorLighterElectricGreen"
         android:background="@color/colorMidnightBlue"
         android:lineSpacingExtra="10dp"
-        android:textColor="@color/colorMetallicSeagreen"
+        android:textColor="@color/colorLighterElectricGreen"
         android:padding="24dp"
         android:gravity="top"
         android:inputType="textMultiLine" />

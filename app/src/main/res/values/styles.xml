@@ -9,9 +9,11 @@
         <item name="android:textStyle">italic</item>
         <item name="android:textSize">30dp</item>
         <item name="android:gravity">center</item>
+        <item name="android:fontFamily">cursive</item>
+
     </style>
     <style name="ToggleButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:textSize">14sp</item>
-        <!-- Add other style attributes if needed -->
+
     </style>
 </resources>

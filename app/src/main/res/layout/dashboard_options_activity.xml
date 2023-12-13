@@ -41,6 +41,7 @@
         android:layout_weight="1"
         android:background="@color/colorSteelBlue"
         android:elevation="4dp"
+        app:titleTextAppearance="@style/ItalicToolbarText"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:title="@string/app_name"
         android:fontFamily="cursive"

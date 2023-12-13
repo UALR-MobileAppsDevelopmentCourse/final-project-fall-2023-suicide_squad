@@ -42,6 +42,7 @@
             android:background="@color/colorSteelBlue"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:titleTextAppearance="@style/ItalicToolbarText"
             app:title="@string/app_notes"
             app:titleTextColor="@color/white" />
 
